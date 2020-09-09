@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.multicoreLoopDemo = new System.Windows.Forms.Button();
             this.tplDemo = new System.Windows.Forms.Button();
+            this.multicoreLoopDemo = new System.Windows.Forms.Button();
             this.asyncAwaitDemo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.asDemo = new System.Windows.Forms.Button();
@@ -64,16 +64,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Concurrency And Parallalelism";
             // 
-            // multicoreLoopDemo
-            // 
-            this.multicoreLoopDemo.Location = new System.Drawing.Point(19, 75);
-            this.multicoreLoopDemo.Name = "multicoreLoopDemo";
-            this.multicoreLoopDemo.Size = new System.Drawing.Size(284, 34);
-            this.multicoreLoopDemo.TabIndex = 4;
-            this.multicoreLoopDemo.Text = "C# TPL Loop Paralalism";
-            this.multicoreLoopDemo.UseVisualStyleBackColor = true;
-            this.multicoreLoopDemo.Click += new System.EventHandler(this.multicoreLoopDemo_Click);
-            // 
             // tplDemo
             // 
             this.tplDemo.Location = new System.Drawing.Point(19, 115);
@@ -83,6 +73,16 @@
             this.tplDemo.Text = "C# TPL Task Parallalism";
             this.tplDemo.UseVisualStyleBackColor = true;
             this.tplDemo.Click += new System.EventHandler(this.tplDemo_Click);
+            // 
+            // multicoreLoopDemo
+            // 
+            this.multicoreLoopDemo.Location = new System.Drawing.Point(19, 75);
+            this.multicoreLoopDemo.Name = "multicoreLoopDemo";
+            this.multicoreLoopDemo.Size = new System.Drawing.Size(284, 34);
+            this.multicoreLoopDemo.TabIndex = 4;
+            this.multicoreLoopDemo.Text = "C# TPL Loop Paralalism";
+            this.multicoreLoopDemo.UseVisualStyleBackColor = true;
+            this.multicoreLoopDemo.Click += new System.EventHandler(this.multicoreLoopDemo_Click);
             // 
             // asyncAwaitDemo
             // 
@@ -251,6 +251,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

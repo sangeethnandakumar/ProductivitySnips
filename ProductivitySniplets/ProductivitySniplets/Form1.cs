@@ -247,9 +247,9 @@ namespace ProductivitySniplets
                 Thread.Sleep(2000);
                 MessageBox.Show("This task might runned on a different core");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-            }      
+            }
         }
         #endregion
 
@@ -280,6 +280,11 @@ namespace ProductivitySniplets
                 Console.WriteLine(i);
             }
             MessageBox.Show("Single Core Loops Completed");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
