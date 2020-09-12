@@ -11,6 +11,7 @@ namespace ProductivitySniplets
         public bool IsSuccess { get; set; }
         public ResponseStatus ResponseStatus { get; set; }
         public List<string> Attributes { get; set; }
+        public string Message { get; set; }
         public T Data { get; set; }
 
         public Response()
@@ -24,6 +25,7 @@ namespace ProductivitySniplets
         public bool IsSuccess { get; set; }
         public ResponseStatus ResponseStatus { get; set; }
         public List<string> Attributes { get; set; }
+        public string Message { get; set; }
 
         public Response()
         {
