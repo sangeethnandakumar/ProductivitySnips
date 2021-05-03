@@ -19,10 +19,8 @@ namespace ProductivitySniplets
             InitializeComponent();
         }
 
-
-
-
         #region YIELD
+
         //Example of yielding values from IEnumerator
         private void yieldDemo_Click(object sender, EventArgs e)
         {
@@ -32,6 +30,7 @@ namespace ProductivitySniplets
                 MessageBox.Show(student.ToString());
             }
         }
+
         private static IEnumerable<int> FilterStudents(List<int> allStudents)
         {
             foreach (var student in allStudents)
@@ -42,11 +41,11 @@ namespace ProductivitySniplets
                 }
             }
         }
-        #endregion
 
-
+        #endregion YIELD
 
         #region REF
+
         //Ref is a two way variable update. Means, val will be accessible inside the callie function argument
         private void refDemo_Click(object sender, EventArgs e)
         {
@@ -54,15 +53,16 @@ namespace ProductivitySniplets
             ChangeRef(ref a);
             MessageBox.Show($"A is - {a}");
         }
+
         private static void ChangeRef(ref int b)
         {
             b = b + 10;
         }
-        #endregion
 
-
+        #endregion REF
 
         #region OUT
+
         //Out is a one way variable update. Means, val will be not be accessible inside the callie function argument but output reflects
         private void outDemo_Click(object sender, EventArgs e)
         {
@@ -70,16 +70,17 @@ namespace ProductivitySniplets
             ChangeOut(out a);
             MessageBox.Show($"A is - {a}");
         }
+
         private static void ChangeOut(out int b)
         {
             b = 30;
             b = b + 10;
         }
-        #endregion
 
-
+        #endregion OUT
 
         #region IS
+
         //Is is used to match types
         private void isDemo_Click(object sender, EventArgs e)
         {
@@ -89,11 +90,11 @@ namespace ProductivitySniplets
                 MessageBox.Show($"The var is a string");
             }
         }
-        #endregion
 
-
+        #endregion IS
 
         #region AS
+
         //As is used to type cast. If 'as' fails then the result will be null
         private void asDemo_Click(object sender, EventArgs e)
         {
@@ -101,38 +102,36 @@ namespace ProductivitySniplets
             string randomString = random as string;
             MessageBox.Show($"Object converted to string");
         }
-        #endregion
 
-
+        #endregion AS
 
         #region AS
+
         //Delegate is usefull to call callbacks
         private void delegateDemo_Click(object sender, EventArgs e)
         {
             var longTask = new LongTask();
             longTask.RunLongTask(MyCallback);
         }
+
         public static void MyCallback(int i)
         {
             MessageBox.Show(i.ToString());
         }
-        #endregion
 
-
-
+        #endregion AS
 
         #region LAMBDA EXPRESSIONS
+
         //
         private void lambdaDemo_Click(object sender, EventArgs e)
         {
-
         }
-        #endregion
 
-
-
+        #endregion LAMBDA EXPRESSIONS
 
         #region EVENTS AND DELEGATES
+
         //Delegates to raise events for subscribers
         private void eventsAndDelegatesDemo_Click(object sender, EventArgs e)
         {
@@ -142,33 +141,35 @@ namespace ProductivitySniplets
             videoEncorder.OnEncodingFinished += OnVideoEncodingFinished_SubscriberB;
             videoEncorder.Encode(@"C:\text.mp4");
         }
+
         private void OnVideoEncodingStarted(object sender, VideoEventArgs args)
         {
             MessageBox.Show("Video Encoding Started");
         }
+
         private void OnVideoEncodingFinished_SubscriberA(object sender, VideoEventArgs args)
         {
             MessageBox.Show("Video Encoding Finished");
         }
+
         private void OnVideoEncodingFinished_SubscriberB(object sender, VideoEventArgs args)
         {
             MessageBox.Show("The encoded video is at : " + args.EncodedVideoLocation);
         }
-        #endregion
 
-
-
+        #endregion EVENTS AND DELEGATES
 
         #region ASYNC AND AWAIT
+
         private async void asyncAwaitDemo_Click(object sender, EventArgs e)
         {
-            //Pour coffie synchronously
-            PourCoffee();
+            //Call normal fucntion synchronously
+            SynchronousFunction();
 
-            //Turn On Lighs (Can be done in background anytime..)
-            //If this fun is not calling any async methord internaly use this
-            await Task.Run(new Action(TurnOnLights));
+            //Another methord
+            await Task.Run(new Action(SynchronousFunction));
 
+            //Make Tasks
             //Boil eggs async
             var eggTask = FryEggsAsync();
             //Toast bread async
@@ -178,7 +179,7 @@ namespace ProductivitySniplets
             var breakfastTasks = new List<Task> { eggTask, toastTask };
             while (breakfastTasks.Count > 0)
             {
-                Task finishedTask = await Task.WhenAny(breakfastTasks);
+                var finishedTask = await Task.WhenAny(breakfastTasks);
                 if (finishedTask == eggTask)
                 {
                     MessageBox.Show($"{eggTask.Result} Eggs are ready");
@@ -194,48 +195,42 @@ namespace ProductivitySniplets
             MessageBox.Show("Breakfast done");
         }
 
-        private void PourCoffee()
+        private void SynchronousFunction()
         {
-            MessageBox.Show("Coffie poured");
+            MessageBox.Show("Synchronous function called");
         }
-        private void TurnOnLights()
-        {
-            MessageBox.Show("Switching on lights...");
-            MessageBox.Show("Lights on");
-        }
+
         private async Task<int> FryEggsAsync()
         {
             MessageBox.Show("Frying eggs...");
             await Task.Delay(5000);
             return 3;
         }
+
         private async Task<string> ToastBreadAsync()
         {
             MessageBox.Show("Toasting bread...");
             await Task.Delay(5000);
             return "Bread toasted";
         }
-        #endregion
 
-
-
-
+        #endregion ASYNC AND AWAIT
 
         #region TASK PARALLEL LIBRARY
+
         private void tplDemo_Click(object sender, EventArgs e)
         {
             //Create a cancellation token
             var tokenSource = new CancellationTokenSource();
             //Pass token and start execution
-            var task1 = Task.Factory.StartNew(() => NewTak(tokenSource.Token));
+            var task1 = Task.Factory.StartNew(() => ParallelTask(tokenSource.Token));
             //Cancel when requested
             tokenSource.Cancel();
-
 
             MessageBox.Show("Other tasks are still running...");
         }
 
-        private void NewTak(CancellationToken token)
+        private void ParallelTask(CancellationToken token)
         {
             try
             {
@@ -251,11 +246,11 @@ namespace ProductivitySniplets
             {
             }
         }
-        #endregion
 
-
+        #endregion TASK PARALLEL LIBRARY
 
         #region TASK PARALLEL LIBRARY
+
         private void multicoreLoopDemo_Click(object sender, EventArgs e)
         {
             //Multicore for loop but *blocking
@@ -270,7 +265,8 @@ namespace ProductivitySniplets
 
             MessageBox.Show("Multi Core Loops Completed");
         }
-        #endregion
+
+        #endregion TASK PARALLEL LIBRARY
 
         private void singlecoreLoopDemo_Click(object sender, EventArgs e)
         {
@@ -284,7 +280,6 @@ namespace ProductivitySniplets
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
