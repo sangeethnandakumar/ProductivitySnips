@@ -1,8 +1,7 @@
-ProductivitySniplets/ProductivitySniplets/obj/
-ProductivitySniplets/.vs/
-ProductivitySniplets/Repositorys/obj/
-ProductivitySniplets/Repositorys/bin/
-ProductivitySniplets/Entities/obj/
-ProductivitySniplets/Entities/bin/
-ProductivitySniplets/Contracts/obj/
-ProductivitySniplets/Contracts/bin/
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+.vs
