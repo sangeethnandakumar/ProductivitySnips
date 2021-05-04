@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositorys", "Repositorys\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{2F36D908-D0BB-423E-A1EE-923B0DC24C70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedCSharp", "..\AdvancedCSharp\AdvancedCSharp.csproj", "{BFF8E3F9-0BE8-4550-A16E-9777E027BBCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2F36D908-D0BB-423E-A1EE-923B0DC24C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F36D908-D0BB-423E-A1EE-923B0DC24C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F36D908-D0BB-423E-A1EE-923B0DC24C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF8E3F9-0BE8-4550-A16E-9777E027BBCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF8E3F9-0BE8-4550-A16E-9777E027BBCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF8E3F9-0BE8-4550-A16E-9777E027BBCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF8E3F9-0BE8-4550-A16E-9777E027BBCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
